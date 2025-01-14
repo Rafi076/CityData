@@ -64,6 +64,9 @@ def submit():
         sheet.append([name, contact, age, gender, address.strip(), email, dob, url,Disease,Blood,Hobby,Occupation,Education,Marital,Sleeping,Income,Stress,Savings])
         workbook.save(file)
 
+        # Call the QR code generation function
+        generate_qr_code(f"{name}, {contact}, {age}, {gender}, {address.strip()}, {email}, {dob}, {url}, {Disease}, {Blood}, {Hobby}, {Occupation}, {Education}, {Marital}, {Sleeping}, {Income}, {Stress}, {Savings}", contact)
+
         messagebox.showinfo("Success", "Data updated successfully!")
         clear()  # Clear the form fields
 
